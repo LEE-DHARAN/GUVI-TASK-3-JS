@@ -1,0 +1,89 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f1f1f1;
+}
+
+.game-container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+header h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.card {
+    width: 100%;
+    padding-top: 100%;  /* Makes the card square */
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card .front,
+.card .back {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Ensures that the back is hidden when not flipped */
+    border-radius: 10px;
+}
+
+.card .front {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .back {
+    background-color: #007bff;
+    transform: rotateY(180deg); /* Make sure it's initially hidden */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    color: white;
+    font-weight: bold;
+}
